@@ -1,0 +1,60 @@
+<h1>Insira seus gastos diários abaixo</h1>
+<a href="./clientes/novo" class="btn btn-primary">+ Novo dia</a>
+<hr>
+<table class="table" id="clientes">
+    <!-- Títulos da tabela -->
+    <thead> 
+        <tr>
+            <th>ID</th>
+            <th>Alimentação</th>
+            <th>Transporte</th>
+            <th>Compras</th>
+            <th>Estacionamento</th>
+            <th>Combustível</th>
+            <th>Saúde</th>
+            <th>Entretenimento</th>
+            <th></th>
+        </tr>    
+    </thead>
+    <!-- Conteúdo da tabela -->
+    <tbody>
+        {{#each listaclientes}}
+        <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.alimentacao}}</td>
+            <td>{{this.transporte}}</td>
+            <td>{{this.compras}}</td>
+            <td>{{this.estacionamento}}</td>
+            <td>{{this.combustivel}}</td>
+            <td>{{this.saude}}</td>
+            <td>{{this.entretenimento}}</td>
+            <td><a href="/clientes/alterar/{{this.id}}" 
+            class="btn btn-warning">Alterar</a>
+                <button class="btn btn-danger js-delete"
+                        data-id="{{this.id}}">Excluir</button>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<div class="modal" tabindex="-1" id="meumodal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Excluir cliente</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Confirma a exclusão do cliente?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" id="btnsim">SIM</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/public/site.js"></script>

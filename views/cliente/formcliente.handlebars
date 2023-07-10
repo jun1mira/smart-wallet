@@ -1,0 +1,60 @@
+<h2>Cliente</h2>
+<hr>
+
+<form action="/clientes/save" method="POST">
+
+    <input type="hidden" name="id" 
+    value="{{cliente.id}}">
+
+    <div class="form-group">
+        <label for="txtalimentacao">Alimentação:</label>
+        <input type="text" class="form-control" 
+            value="{{cliente.alimentacao}}"
+            id="alimentacao" name="alimentacao" required >
+            <!-- BINDING -->
+    </div>
+
+    <div class="form-group">
+        <label for="txttransporte">Transporte:</label>
+        <input type="text" class="form-control" 
+            value="{{cliente.transporte}}"
+            id="txttransporte" name="transporte" required >
+    </div>
+
+    <div class="form-group">
+        <label for="txtcompras">Compras:</label>
+        <input type="text" class="form-control" 
+            value="{{cliente.compras}}"
+            id="txtcompras" name="compras" required >
+    </div>
+
+    <div class="form-group">
+        <label for="txtestacionamento">Estacionamento:</label>
+        <input type="text" class="form-control"
+            value="{{cliente.estacionamento}}"
+            id="txtestacionamento" name="estacionamento" required >
+    </div>
+
+    <div class="form-group">
+        <label for="txtcombustivel">Combustível:</label>
+        <input type="text" class="form-control"
+            value="{{cliente.combustivel}}"
+            id="txtcombustivel" name="combustivel" required >
+    </div>
+
+    <div class="form-group">
+        <label for="txtsaude">Saúde:</label>
+        <input type="text" class="form-control"
+            value="{{cliente.saude}}"
+            id="txtsaude" name="saude" required >
+    </div>
+
+    <div class="form-group">
+        <label for="txtentretenimento">Entretenimento:</label>
+        <input type="text" class="form-control"
+            value="{{cliente.entretenimento}}"
+            id="txtentretenimento" name="entretenimento" required >
+    </div>
+
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
